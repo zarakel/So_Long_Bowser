@@ -18,11 +18,9 @@
 # define ERRMSG5 "Error :\n Elements required is missing\n"
 # define ERREXT 6
 # define ERRMSG6 "Error :\n Extension not recognized\n"
-typedef struct s_list	t_list;
+typedef struct s_map	t_map;
 
-// declarer une struct global (dont les pointeurs) ou il y aura la map qui permettra une manipulation facile de ces éléments 
-
-struct  s_list
+struct  s_map
 {
 	char	**total_map;
 	int	max_x;
@@ -35,12 +33,12 @@ struct  s_list
 int	main();
 void	free_split(char **);
 void	error_san(int error, char *);
-char	**build_map(char **argv, t_list *n);
-void	check_bit_by_bit(char **tmp, t_list *n);
-void	check_requirements(char *line_map, int y, t_list *n);
-int	elements_signal(char char_map, int x, t_list *n);
-char	**malloc_map_arr(char **argv, t_list *n);
-char	**malloc_and_create_map_string(char **argv, t_list *n);
-void	init_struct(t_list *n);
+char	**build_map(char **argv, t_map *n);
+void	check_bit_by_bit(char **tmp, t_map *n);
+void	check_requirements(char *line_map, int y, t_map *n);
+int	elements_signal(char char_map, int x, t_map *n);
+char	**malloc_map_arr(char **argv, t_map *n);
+char	**malloc_and_create_map_string(char **argv, t_map *n);
+void	init_struct(t_map *n);
 
 #endif

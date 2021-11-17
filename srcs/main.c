@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-void	init_struct(t_list *n)
+void	init_struct(t_map *n)
 {
 	n->total_map = 0;
 	n->max_x = 0;
@@ -17,7 +17,7 @@ void	init_struct(t_list *n)
 
 int	main(int argc, char *argv[])
 {
-	t_list	n;
+	t_map	n;
 	int	i;
 
 	i = 0;

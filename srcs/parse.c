@@ -4,7 +4,7 @@
 #include "../lib/libft/libft.h"
 #include <fcntl.h>
 
-char	**build_map(char **argv, t_list *n)
+char	**build_map(char **argv, t_map *n)
 {
 	char	**tmp;
 	int	size;
@@ -20,7 +20,7 @@ char	**build_map(char **argv, t_list *n)
 	return (tmp);
 }
 
-void	check_bit_by_bit(char **total_map, t_list *n)
+void	check_bit_by_bit(char **total_map, t_map *n)
 {
 	int	x;
 	int	y;
@@ -47,7 +47,7 @@ void	check_bit_by_bit(char **total_map, t_list *n)
 }
 
 
-void	check_requirements(char *line_map, int y, t_list *n)
+void	check_requirements(char *line_map, int y, t_map *n)
 {
 	int	x;
 
@@ -75,7 +75,7 @@ void	check_requirements(char *line_map, int y, t_list *n)
 }
 
 
-int	elements_signal(char char_map, int x, t_list *n)
+int	elements_signal(char char_map, int x, t_map *n)
 {
 	if (x == 0 || x == n->max_x)
 	{

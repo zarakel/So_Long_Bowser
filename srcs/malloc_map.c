@@ -2,7 +2,7 @@
 #include "../lib/GNL/get_next_line.h"
 #include <fcntl.h>
 
-char	**malloc_map_arr(char **argv, t_list *n)
+char	**malloc_map_arr(char **argv, t_map *n)
 {
 	int	i;
 	char	**ptr;
@@ -27,7 +27,7 @@ char	**malloc_map_arr(char **argv, t_list *n)
 	return (ptr);
 }
 
-char	**malloc_and_create_map_string(char **argv, t_list *n)
+char	**malloc_and_create_map_string(char **argv, t_map *n)
 {
 	char	**ptr;
 	char	*tmp;

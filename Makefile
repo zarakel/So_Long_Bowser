@@ -42,17 +42,17 @@ $(NAME): $(SRC)
 	$(CC) -c $(CPPFLAGS) $(CFLAGS) $(SRC) $< -o $@ 
 
 clean:
-	@$(MAKE) -j -s --no-print-directory -C lib/libft/ clean
-	@$(MAKE) -j -s --no-print-directory -C lib/gnl/ clean 
-	@$(MAKE) -j -s --no-print-directory -C lib/mlx/ clean
+	@$(MAKE) -s --no-print-directory -C lib/libft/ clean
+	@$(MAKE) -s --no-print-directory -C lib/gnl/ clean 
+	@$(MAKE) -s --no-print-directory -C lib/mlx/ clean
 	$(RM) $(OBJ)
 
 fclean: clean
-	@$(MAKE) -j -s --no-print-directory -C lib/libft/ fclean
-	@$(MAKE) -j -s --no-print-directory -C lib/gnl/ fclean
-	@$(MAKE) -j -s --no-print-directory -C lib/mlx/ fclean
+	@$(MAKE) -s --no-print-directory -C lib/libft/ fclean
+	@$(MAKE) -s --no-print-directory -C lib/gnl/ fclean
+	#@$(MAKE) -s --no-print-directory -C lib/mlx/ fclean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: so_long all clean fclean re
+.PHONY: all clean fclean re
