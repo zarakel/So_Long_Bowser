@@ -1,6 +1,9 @@
 #include "../inc/so_long.h"
 #include "../lib/GNL/get_next_line.h"
+#include "../inc/macro.h"
+#include "../inc/struct.h"
 #include <fcntl.h>
+#include <stdlib.h>
 
 char	**malloc_map_arr(char **argv, t_map *n)
 {

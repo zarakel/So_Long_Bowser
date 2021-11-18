@@ -1,8 +1,9 @@
 #include "../inc/so_long.h"	
+#include "../inc/struct.h"	
+#include "../inc/macro.h"	
 #include "../lib/GNL/get_next_line.h"
 #include "../lib/mlx/mlx.h"
 #include "../lib/libft/libft.h"
-#include <fcntl.h>
 
 char	**build_map(char **argv, t_map *n)
 {

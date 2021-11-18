@@ -50,7 +50,6 @@ clean:
 fclean: clean
 	@$(MAKE) -s --no-print-directory -C lib/libft/ fclean
 	@$(MAKE) -s --no-print-directory -C lib/gnl/ fclean
-	#@$(MAKE) -s --no-print-directory -C lib/mlx/ fclean
 	$(RM) $(NAME)
 
 re: fclean all

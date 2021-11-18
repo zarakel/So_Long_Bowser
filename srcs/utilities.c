@@ -1,5 +1,7 @@
 #include "../inc/so_long.h"
+#include "../inc/macro.h"
 #include "../lib/libft/libft.h"
+#include <unistd.h>
 
 void	free_split(char **cpy_argv)
 {
