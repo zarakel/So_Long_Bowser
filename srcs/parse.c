@@ -70,13 +70,14 @@ void	check_requirements(char *line_map, int y, t_map *n)
 		}
 		
 		else 
-			elements_signal(line_map[x], x, n);
+			elements_signal(line_map[x], x, y, n);
 		x++;
 	}
 }
 
+#include <stdio.h>
 
-int	elements_signal(char char_map, int x, t_map *n)
+int	elements_signal(char char_map, int x, int y, t_map *n)
 {
 	if (x == 0 || x == n->max_x)
 	{
@@ -87,7 +88,13 @@ int	elements_signal(char char_map, int x, t_map *n)
 		}
 	}	
 	if (char_map == 'P')
+	{
 		n->P++;
+		n->P_x = x;
+		n->P_y = y;
+		if (n->P > 1)
+			error_san(ERRNO7, ERRMSG7);
+	}
 	if (char_map == 'C')
 		n->C++;
 	if (char_map == 'E')

@@ -28,5 +28,7 @@ void	error_san(int error, char *error_msg)
 		write(2, error_msg, ft_strlen(error_msg)); 
 	if (error == ERRNO5)
 		write(2, error_msg, ft_strlen(error_msg)); 
+	if (error == ERRNO7)
+		write(2, error_msg, ft_strlen(error_msg));
 	exit(0);
 }

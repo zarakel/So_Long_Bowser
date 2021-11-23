@@ -15,5 +15,7 @@
 # define ERRMSG5 "Error :\n Elements required is missing\n"
 # define ERREXT 6
 # define ERRMSG6 "Error :\n Extension not recognized\n"
+# define ERRNO7 7
+# define ERRMSG7 "Error :\n Too much players\n"
 
 #endif

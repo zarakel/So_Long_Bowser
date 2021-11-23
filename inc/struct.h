@@ -30,6 +30,8 @@ struct  s_map
 	int	max_x;
 	int	max_y;
 	int	P;
+	int	P_y;
+	int	P_x;
 	int	C;
 	int	E;
 };
