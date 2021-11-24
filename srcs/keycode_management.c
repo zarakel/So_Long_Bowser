@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keycode_management.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/24 18:03:59 by juan              #+#    #+#             */
+/*   Updated: 2021/11/24 18:54:44 by juan             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"
 #include "../inc/struct.h"
 #include "../inc/keycode_qwerty.h"
@@ -9,49 +21,27 @@
 
 int	keycode_management(int keycode, t_map *map)
 {
-	static int	moves;
-	int	old_P_y;
-	//int	testos;
+	int	old_p_y;
+	int	old_p_x;
 
-	//iitestos = 0;
-	if (keycode == UP || keycode == LEFT || keycode == DOWN
-		|| keycode == RIGHT || keycode == ESC)
+	old_p_y = 0;
+	old_p_x = 0;
+	if (keycode == UP || keycode == UP_ARROW || keycode == LEFT
+		|| keycode == LEFT_ARROW || keycode == DOWN
+		|| keycode == DOWN_ARROW || keycode == RIGHT
+		|| keycode == RIGHT_ARROW || keycode == ESC)
 	{
-		if (keycode == UP) // tout les mvmts seront + ou - similaire
-		{
-			//iiprintf("%d", testos);
-			//testos++;
-			if (map->total_map[map->P_x][map->P_y - 1] == '0' 
-					|| map->total_map[map->P_x][map->P_y - 1] == 'C')
-			{
-				old_P_y = map->P_y;
-				moves++;
-				ft_putstr_fd("Moves : ", 1);
-				ft_putnbr_fd(moves, 1);
-				ft_putstr_fd(" \n", 1);
-				map->total_map[map->P_x][map->P_y - 1] = 'P';
-				map->total_map[map->P_x][old_P_y] = '0';
-			}
-			else if (map->total_map[map->P_x][map->P_y - 1] == 'E' 
-					&& map->C == 0)
-			{
-				old_P_y = map->P_y;
-				ft_putnbr_fd(moves, 1);
-				map->total_map[map->P_x][map->P_y - 1] = 'P';
-				map->total_map[map->P_x][old_P_y] = '0';
-				mlx_destroy_window(map->vars.mlx, map->vars.win);
-				map->vars.win = 0;
-				write(1, "Level Completed !\n", 19);
-				exit(0);
-			}
-		}
+		if (keycode == UP || keycode == UP_ARROW)
+			keycode_up(map, old_p_y);
+		if (keycode == DOWN || keycode == DOWN_ARROW)
+			keycode_down(map, old_p_y);
+		if (keycode == LEFT || keycode == LEFT_ARROW)
+			keycode_left(map, old_p_x);
+		if (keycode == RIGHT || keycode == RIGHT_ARROW)
+			keycode_right(map, old_p_x);
 		if (keycode == ESC)
-		{
-			mlx_destroy_window(map->vars.mlx, map->vars.win);
-			map->vars.win = 0;
-			write(1, "ESC have been used\n", 20);
-			exit(0);
-		}
+			keycode_esc(map);
+		print(map);
 	}
 	return (0);
 }

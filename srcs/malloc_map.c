@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   malloc_map.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/24 18:41:03 by juan              #+#    #+#             */
+/*   Updated: 2021/11/24 18:42:08 by juan             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"
 #include "../lib/GNL/get_next_line.h"
 #include "../inc/macro.h"
@@ -7,10 +19,10 @@
 
 char	**malloc_map_arr(char **argv, t_map *n)
 {
-	int	i;
+	int		i;
 	char	**ptr;
 	char	*tmp;
-	int	fd;
+	int		fd;
 
 	ptr = NULL;
 	tmp = NULL;
@@ -34,8 +46,8 @@ char	**malloc_and_create_map_string(char **argv, t_map *n)
 {
 	char	**ptr;
 	char	*tmp;
-	int	fd;
-	int	i;
+	int		fd;
+	int		i;
 
 	ptr = NULL;
 	tmp = NULL;

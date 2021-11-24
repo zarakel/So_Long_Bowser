@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/24 18:43:00 by juan              #+#    #+#             */
+/*   Updated: 2021/11/24 18:57:37 by juan             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"	
 #include "../inc/struct.h"	
 #include "../inc/macro.h"	
@@ -8,7 +20,7 @@
 char	**build_map(char **argv, t_map *n)
 {
 	char	**tmp;
-	int	size;
+	int		size;
 
 	size = ft_strlen(argv[1]);
 	tmp = NULL;
@@ -39,14 +51,13 @@ void	check_bit_by_bit(char **total_map, t_map *n)
 		check_requirements(total_map[y], y, n);
 		y++;
 	}
-	if (n->P < 1 || n->C < 1 || n->E < 1)
+	if (n->p < 1 || n->c < 1 || n->e < 1)
 	{
 		free_split(n->total_map);
 		error_san(ERRNO5, ERRMSG5);
 	}
 	return ;
 }
-
 
 void	check_requirements(char *line_map, int y, t_map *n)
 {
@@ -60,7 +71,7 @@ void	check_requirements(char *line_map, int y, t_map *n)
 			free_split(n->total_map);
 			error_san(ERRNO2, ERRMSG2);
 		}
-		if (y == 0 || y == n->max_y) 
+		if (y == 0 || y == n->max_y)
 		{
 			if (line_map[x] != '1')
 			{
@@ -68,14 +79,11 @@ void	check_requirements(char *line_map, int y, t_map *n)
 				error_san(ERRNO3, ERRMSG3);
 			}
 		}
-		
-		else 
+		else
 			elements_signal(line_map[x], x, y, n);
 		x++;
 	}
 }
-
-#include <stdio.h>
 
 int	elements_signal(char char_map, int x, int y, t_map *n)
 {
@@ -89,15 +97,15 @@ int	elements_signal(char char_map, int x, int y, t_map *n)
 	}	
 	if (char_map == 'P')
 	{
-		n->P++;
-		n->P_x = x;
-		n->P_y = y;
-		if (n->P > 1)
+		n->p++;
+		n->p_x = x;
+		n->p_y = y;
+		if (n->p > 1)
 			error_san(ERRNO7, ERRMSG7);
 	}
 	if (char_map == 'C')
-		n->C++;
+		n->c++;
 	if (char_map == 'E')
-		n->E++;
+		n->e++;
 	return (0);
 }

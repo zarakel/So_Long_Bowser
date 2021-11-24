@@ -6,7 +6,7 @@
 /*   By: jbuan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 11:23:04 by jbuan             #+#    #+#             */
-/*   Updated: 2021/05/03 18:47:51 by jbuan            ###   ########.fr       */
+/*   Updated: 2021/11/24 19:03:40 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 # include <stdlib.h>
 
-typedef struct s_list   t_list;
+typedef struct s_list	t_list;
 
-struct  s_list
+struct	s_list
 {
-        void    *content;
-        t_list  *next;
+	void	*content;
+	t_list	*next;
 };
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **alst, t_list *new);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   macro.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/24 18:49:58 by juan              #+#    #+#             */
+/*   Updated: 2021/11/24 18:49:59 by juan             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MACRO_H
 # define MACRO_H
 
@@ -17,5 +29,6 @@
 # define ERRMSG6 "Error :\n Extension not recognized\n"
 # define ERRNO7 7
 # define ERRMSG7 "Error :\n Too much players\n"
+# define PIXEL 64
 
 #endif

@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   struct.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/24 18:50:26 by juan              #+#    #+#             */
+/*   Updated: 2021/11/24 18:51:44 by juan             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef STRUCT_H
 # define STRUCT_H
 
-typedef struct	s_vars t_vars;
+typedef struct s_vars	t_vars;
 
 struct	s_vars
 {
@@ -9,33 +21,35 @@ struct	s_vars
 	void	*win;
 };
 
-typedef struct s_data	t_data;
+typedef struct s_img	t_img;
 
-struct	s_data 
+struct	s_img
 {
 	void	*img;
+	int		img_size;
 	char	*addr;
-	int	bits_per_pixel;
-	int	line_length;
-	int	endian;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
 };
 
 typedef struct s_map	t_map;
 
-struct  s_map
+struct s_map
 {
-	t_data	img;
+	t_img	img;
 	t_vars	vars;
 	char	**total_map;
-	int	max_x;
-	int	max_y;
-	int	P;
-	int	P_y;
-	int	P_x;
-	int	C;
-	int	E;
+	int		moves;
+	int		max_x;
+	int		max_y;
+	int		win_w;
+	int		win_h;
+	int		p;
+	int		p_y;
+	int		p_x;
+	int		c;
+	int		e;
 };
-
-//Déclarer une structure globale, potentiellement s_map, qui contiendrait toutes les autres structures afin de contenir les données intéressantes qui seront utilisés dans le code
 
 #endif
