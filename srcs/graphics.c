@@ -6,7 +6,7 @@
 /*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:20:06 by juan              #+#    #+#             */
-/*   Updated: 2021/11/24 18:23:12 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/25 14:33:40 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,46 @@
 #include "../lib/mlx/mlx.h"
 #include "../lib/libft/libft.h"
 #include <stdio.h>
+
+void	print(t_map *map)
+{
+	int	x;
+	int	y;
+
+	mlx_clear_window(map->vars.mlx, map->vars.win);
+	map->img.img = mlx_new_image(map->vars.mlx, map->win_w, map->win_h);
+	map->img.addr = mlx_get_data_addr(map->img.img,
+			&map->img.bits_per_pixel, &map->img.line_length,
+			&map->img.endian);
+	x = -1;
+	while (++x < map->max_x)
+	{
+		y = -1;
+		while (++y < map->max_y)
+		{
+			tiles(map, x, y);
+		}
+	}
+	mlx_put_image_to_window(map->vars.mlx, map->vars.win, map->img.img, 0, 0);
+	mlx_destroy_image(map->vars.mlx, map->img.img);
+}
+
+void	tiles(t_map *map, int x, int y)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < PIXEL)
+	{
+		j = -1;
+		while (++j < PIXEL)
+		{
+			pixel(map, (i + x * PIXEL), (j + y * PIXEL),
+				color(map, x, y));
+		}
+	}
+}
 
 void	pixel(t_map *map, int x, int y, int color)
 {
@@ -43,44 +83,4 @@ int	color(t_map *map, int x, int y)
 		return (0x00CADABA);
 	else
 		return (0x0000BFF0);
-}
-
-void	tiles(t_map *map, int x, int y)
-{
-	int	i;
-	int	j;
-
-	i = -1;
-	while (++i < PIXEL)
-	{
-		j = -1;
-		while (++j < PIXEL)
-		{
-			pixel(map, (i + x * PIXEL), (j + y * PIXEL),
-				color(map, x, y));
-		}
-	}
-}
-
-void	print(t_map *map)
-{
-	int	x;
-	int	y;
-
-	mlx_clear_window(map->vars.mlx, map->vars.win);
-	map->img.img = mlx_new_image(map->vars.mlx, map->win_w, map->win_h);
-	map->img.addr = mlx_get_data_addr(map->img.img,
-			&map->img.bits_per_pixel, &map->img.line_length,
-			&map->img.endian);
-	x = -1;
-	while (++x < map->max_x)
-	{
-		y = -1;
-		while (++y < map->max_y)
-		{
-			tiles(map, x, y);
-		}
-	}
-	mlx_put_image_to_window(map->vars.mlx, map->vars.win, map->img.img, 0, 0);
-	mlx_destroy_image(map->vars.mlx, map->img.img);
 }

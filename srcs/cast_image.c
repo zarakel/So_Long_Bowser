@@ -6,7 +6,7 @@
 /*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:24:14 by juan              #+#    #+#             */
-/*   Updated: 2021/11/24 18:28:03 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/25 11:42:49 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ int	cast_img(t_map map)
 		mlx_loop(map.vars.mlx);
 		return (0);
 	}
+	else
+		error_san(ERRNO8, ERRMSG8);
 	return (1);
 }

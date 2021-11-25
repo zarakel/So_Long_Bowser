@@ -6,7 +6,7 @@
 /*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:36:43 by juan              #+#    #+#             */
-/*   Updated: 2021/11/24 18:56:53 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/25 11:42:22 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ void	init_struct(t_map *map)
 int	main(int argc, char *argv[])
 {
 	t_map	map;
-	int		i;
 
-	i = 0;
 	if (argc != 2)
 		error_san(ERRNO0, ERRMSG0);
 	init_struct(&map);

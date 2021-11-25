@@ -6,15 +6,16 @@
 /*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:45:32 by juan              #+#    #+#             */
-/*   Updated: 2021/11/24 18:46:13 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/25 14:38:31 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/macro.h"
 #include "../lib/libft/libft.h"
+#include "../lib/mlx/mlx.h"
 #include <unistd.h>
-#include <stdio.h>
+#include <stdlib.h>
 
 void	free_split(char **cpy_argv)
 {
@@ -42,6 +43,8 @@ void	error_san(int error, char *error_msg)
 		write(2, error_msg, ft_strlen(error_msg));
 	if (error == ERRNO7)
 		write(2, error_msg, ft_strlen(error_msg));
+	if (error == ERRNO8)
+		write(2, error_msg, ft_strlen(error_msg));
 	exit(0);
 }
 
@@ -60,7 +63,17 @@ void	print_map(t_map *map)
 	i = 0;
 	while (map->total_map[i])
 	{
-		printf("total_map[%d] = %s\n", i, map->total_map[i]);
+		write(1, map->total_map[i], map->max_x + 1);
+		write(1, "\n", 2);
 		i++;
 	}
+}
+
+int	ciao(t_map *map)
+{
+	mlx_destroy_window(map->vars.mlx, map->vars.win);
+	map->vars.win = 0;
+	free_split(map->total_map);
+	write(1, "Ciao !\n", 9);
+	exit(0);
 }
