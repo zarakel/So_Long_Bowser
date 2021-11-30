@@ -6,7 +6,7 @@
 /*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:47:20 by juan              #+#    #+#             */
-/*   Updated: 2021/11/24 18:56:24 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/30 18:13:23 by jbuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "struct.h"
 # include "keycode_qwerty.h"
+# include <mlx.h>
 
 int		main(int argc, char **argv);
 int		cast_img(t_map map);
@@ -40,5 +41,6 @@ void	print(t_map *map);
 void	tiles(t_map *map, int x, int y);
 int		color(t_map *map, int x, int y);	
 void	pixel(t_map *map, int x, int y, int color);
+void	end(char **str, int error, char *error_msg);
 
 #endif

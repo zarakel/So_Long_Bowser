@@ -6,7 +6,7 @@
 /*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:03:59 by juan              #+#    #+#             */
-/*   Updated: 2021/11/24 18:54:44 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/30 17:31:44 by jbuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "../inc/keycode_qwerty.h"
 #include "../inc/macro.h"
 #include "../lib/GNL/get_next_line.h"
-#include "../lib/mlx/mlx.h"
 #include "../lib/libft/libft.h"
 #include <stdio.h>
 

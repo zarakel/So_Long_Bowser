@@ -6,7 +6,7 @@
 /*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:49:58 by juan              #+#    #+#             */
-/*   Updated: 2021/11/25 11:43:48 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/30 18:14:55 by jbuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@
 # define ERRMSG7 "Error :\n Too much players\n"
 # define ERRNO8 8
 # define ERRMSG8 "Error :\n The void * vars.mlx & vars.win isn't working\n"
+# define ERRNO9 9
+# define ERRMSG9 "Error :\n / isn't accepted in the name \n"
+# define ERRNO10 10
+# define ERRMSG10 "Error :\n Folder is detect \n" 
+# define ERRNO11 11
+# define ERRMSG11 "Error :\n File isn't existing \n"
+# define ERRNO12 12
+# define ERRMSG12 "Error :\n You putted forbidden things ?????? \n"
+
 # define PIXEL 64
 
 #endif

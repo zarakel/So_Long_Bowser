@@ -6,7 +6,7 @@
 /*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:41:03 by juan              #+#    #+#             */
-/*   Updated: 2021/11/24 18:42:08 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/30 15:54:58 by jbuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "../inc/struct.h"
 #include <fcntl.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 char	**malloc_map_arr(char **argv, t_map *n)
 {
@@ -27,9 +28,12 @@ char	**malloc_map_arr(char **argv, t_map *n)
 	ptr = NULL;
 	tmp = NULL;
 	i = 0;
+	fd = open(argv[1], O_DIRECTORY);
+	if (fd != -1)
+		error_san(ERRNO10, ERRMSG10);
 	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
-		exit(0);
+	if (fd == -1)
+		error_san(ERRNO11, ERRMSG11);
 	while (get_next_line(fd, &tmp) > 0)
 	{
 		free(tmp);
@@ -59,6 +63,7 @@ char	**malloc_and_create_map_string(char **argv, t_map *n)
 	while (get_next_line(fd, &tmp) > 0)
 	{
 		ptr[i] = ft_gnl_strdup(tmp);
+		n->max_x = ft_strlen(ptr[i]);
 		free(tmp);
 		i++;
 	}

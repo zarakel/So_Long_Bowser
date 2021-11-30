@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utilities.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: jbuan <jbuan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:45:32 by juan              #+#    #+#             */
-/*   Updated: 2021/11/25 14:38:31 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/30 17:51:06 by jbuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/macro.h"
 #include "../lib/libft/libft.h"
-#include "../lib/mlx/mlx.h"
 #include <unistd.h>
 #include <stdlib.h>
 
@@ -45,6 +44,14 @@ void	error_san(int error, char *error_msg)
 		write(2, error_msg, ft_strlen(error_msg));
 	if (error == ERRNO8)
 		write(2, error_msg, ft_strlen(error_msg));
+	if (error == ERRNO9)
+		write(2, error_msg, ft_strlen(error_msg));
+	if (error == ERRNO10)
+		write(2, error_msg, ft_strlen(error_msg));
+	if (error == ERRNO11)
+		write(2, error_msg, ft_strlen(error_msg));
+	if (error == ERRNO12)
+		write(2, error_msg, ft_strlen(error_msg));
 	exit(0);
 }
 
@@ -75,5 +82,7 @@ int	ciao(t_map *map)
 	map->vars.win = 0;
 	free_split(map->total_map);
 	write(1, "Ciao !\n", 9);
+	while (1)
+		;
 	exit(0);
 }

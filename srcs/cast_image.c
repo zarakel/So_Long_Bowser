@@ -6,7 +6,7 @@
 /*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:24:14 by juan              #+#    #+#             */
-/*   Updated: 2021/11/25 11:42:49 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/30 18:13:55 by jbuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "../inc/struct.h"
 #include "../inc/keycode_qwerty.h"
 #include "../inc/macro.h"
-#include "../lib/mlx/mlx.h"
 #include "../lib/libft/libft.h"
 #include <stdio.h>
+#include <mlx.h>
 
 int	cast_img(t_map map)
 {
@@ -34,6 +34,6 @@ int	cast_img(t_map map)
 		return (0);
 	}
 	else
-		error_san(ERRNO8, ERRMSG8);
+		end(map.total_map, ERRNO8, ERRMSG8);
 	return (1);
 }

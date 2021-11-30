@@ -2,9 +2,9 @@ CC = gcc
 
 RM = rm -f
 
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror
 
-MY_CPPFLAGS = -I$(LIBPATH) -I$(LIBFTDIR) -I$(MLXDIR) -I$(GNLDIR)
+MY_CPPFLAGS = -I$(LIBPATH) -I$(LIBFTDIR) -I$(GNLDIR)
 
 CPPFLAGS = $(MY_CPPFLAGS)
 
@@ -22,12 +22,9 @@ APGNL = $(GNLDIR)/get_next_line.a
 LIBFTDIR = $(LIBPATH)/libft
 APLIBFT = $(LIBFTDIR)/libft.a
 
-MLXDIR = $(LIBPATH)/mlx
-APMLX = $(MLXDIR)/libmlx.a
-
 OBJ = $(SRC:.c=.o)
 
-LDLIBS = $(APGNL) $(APLIBFT) $(APMLX) -framework OpenGL -framework AppKit
+LDLIBS = $(APGNL) $(APLIBFT) -lmlx -framework OpenGL -framework AppKit
 
 all:
 	@$(MAKE) -j $(NAME)	
@@ -35,8 +32,7 @@ all:
 $(NAME): $(SRC)
 	@$(MAKE) -j -s --no-print-directory -C lib/libft/
 	@$(MAKE) -j -s --no-print-directory -C lib/gnl/
-	@$(MAKE) -j -s --no-print-directory -C lib/mlx/
-	$(CC) $(LDLIBS) $(CFLAGS) $(SRC) $(APLIBFT) $(APGNL) $(APMLX) -o $(NAME)
+	$(CC) $(LDLIBS) $(CFLAGS) $(SRC) $(APLIBFT) $(APGNL) -o $(NAME)
 
 %.o : %.c
 	$(CC) -c $(CPPFLAGS) $(CFLAGS) $(SRC) $< -o $@ 
@@ -44,7 +40,6 @@ $(NAME): $(SRC)
 clean:
 	@$(MAKE) -s --no-print-directory -C lib/libft/ clean
 	@$(MAKE) -s --no-print-directory -C lib/gnl/ clean 
-	@$(MAKE) -s --no-print-directory -C lib/mlx/ clean
 	$(RM) $(OBJ)
 
 fclean: clean

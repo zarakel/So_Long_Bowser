@@ -6,7 +6,7 @@
 /*   By: juan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:46:22 by juan              #+#    #+#             */
-/*   Updated: 2021/11/24 18:55:35 by juan             ###   ########.fr       */
+/*   Updated: 2021/11/30 17:36:49 by jbuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include "../inc/keycode_qwerty.h"
 #include "../inc/macro.h"
 #include "../lib/GNL/get_next_line.h"
-#include "../lib/mlx/mlx.h"
 #include "../lib/libft/libft.h"
 #include <stdio.h>
+#include <mlx.h>
 
 void	keycode_esc(t_map *map)
 {
